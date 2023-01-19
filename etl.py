@@ -84,7 +84,7 @@ def extract_columns(spark, input_data, output_data):
     df = df.withColumn(ValidColumns.GEOGRAPHICAL_DIVISION_LOCATION.value, extract_column("value"))
 
     # Extracting Race
-    extract_column = udf(lambda row: data_dictionary.VALID_RACE.get(row[38:40].zfill(2)), StringType())
+    extract_column = udf(lambda row: data_dictionary.VALID_RACE.get(row[138:140].zfill(2)), StringType())
     df = df.withColumn(ValidColumns.RACE.value, extract_column("value"))
 
 
